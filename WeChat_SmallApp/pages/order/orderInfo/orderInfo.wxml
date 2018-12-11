@@ -1,0 +1,100 @@
+<view class="page-body">
+  <view class="page-section">
+    <view wx:if="{{userOrder}}" class="navigator-box" style="background-color: white;">
+      <view class="navigator">
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+          <view class="flex-row">
+            <view class="navigator-text-front" style="margin: auto 0rpx;">
+              总计：￥{{userOrder.order_amount}}
+            </view>
+
+            <block wx:if="{{'待支付' == userOrder.order_pay_status_str}}">
+              <button class="font-h4" type="warn" size="mini" plain="true">
+                取消订单
+              </button>
+              <button class="font-h4" type="warn" size="mini" style="margin-left: 20rpx;">
+                立即支付
+              </button>
+            </block>
+            <block wx:else>
+              <button class="font-h4" type="warn" size="mini" disabled="true" plain="true">
+                {{userOrder.order_pay_status_str}}
+              </button>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{list}}" class="navigator-box">
+      <view wx:for="{{list}}" wx:key="index_uuid" class="navigator">
+        <image class="navigator-image" src="{{item.proInfo.pro_cover_img_url}}"></image>
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+          <view class="navigator-text font-h2">
+            <block>{{item.user_order_pro_name}}</block>
+          </view>
+          <view class="navigator-text-front font-h4" style="color: #888; margin-top: 15rpx;">价格：
+            <block>{{item.user_order_price}}</block>
+          </view>
+          <view class="navigator-text-front font-h4" style="color: #888">实付：
+            <block>{{item.user_order_price_with_discount}}</block>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front font-h4" style="color: #888">数量：
+              <block>{{item.user_order_num}}</block>
+            </view>
+            <view class="navigator-text-end font-h4" style="color: #888">小计：￥
+              <block>{{item.user_order_amount_price_with_discount}}</block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="page-section-title">收货地址</view>
+    <view class="navigator-box">
+      <view class="navigator">
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">
+              收货人
+            </view>
+            <view class="navigator-text-end " style="color: #888;">
+              {{userOrder.contact_name}}
+            </view>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">电话</view>
+            <view class="navigator-text-end " style="color: #888;">
+              <block>{{userOrder.contact_phone}}</block>
+            </view>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">
+              地址
+            </view>
+            <view class="navigator-text-end" style="color: #888;">
+              {{userOrder.address_full}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <block wx:if="{{0 < userOrder.user_order_remark.length}}">
+      <view class="page-section-title ">备注</view>
+      <view wx:if="{{userOrder}} " class="navigator-box ">
+        <view class="navigator ">
+          <view class="flex-column " style="flex: 1;padding-right: 20rpx; ">
+            <view class="flex-row ">
+              <view class="navigator-text-front " style="color: #888; ">
+                {{userOrder.user_order_remark}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

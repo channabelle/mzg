@@ -1,0 +1,4 @@
+<!--pages/activity/inviteActivity/inviteActivity.wxml-->
+<text>pages/activity/inviteActivity/inviteActivity.wxml</text>
+<button type="warn" style="margin: 15rpx 25rpx;" bindtap="acceptInvite">接收邀请
+</button>

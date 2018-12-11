@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="hibernateSqlSessionFactory_houseAgent"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource_houseAgent" />
+		<property name="packagesToScan">
+			<list>
+				<!-- 可以加多个包 -->
+				<value>**.model.**</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="current_session_context_class">thread</prop>
+
+				<prop key="hibernate.autoReconnect">true</prop>
+				<prop key="hibernate.autoReconnectForPools">true</prop>
+				<prop key="hibernate.is-connection-validation-required">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateTemplate_houseAgent"
+		class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory"
+			ref="hibernateSqlSessionFactory_houseAgent" />
+	</bean>
+
+	<!-- 配置事务管理器 在*ServiceImpl里写@Transactional就可以启用事务管理 -->
+	<bean id="transactionManager_houseAgent"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory"
+			ref="hibernateSqlSessionFactory_houseAgent"></property>
+	</bean>
+</beans>	

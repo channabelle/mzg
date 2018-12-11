@@ -1,0 +1,54 @@
+<!-- <import src="../../../common/head.wxml" /> -->
+<!-- <import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <!-- <template is="head" data="{{title: 'view'}}"/> -->
+  <view class="page-body">
+    <scroll-view class="scroll-view_H" scroll-x="true">
+      <block wx:for="{{menus}}" wx:key="{{p_uuid_pro_menu}}">
+        <view class="scroll-view-item_H" bindtap='tapMenu' data-id="{{item.p_uuid_pro_menu}}">
+          <block wx:if="{{menuUuid == item.p_uuid_pro_menu}}">
+            <text class="menu_content menu_selected font-h3">{{item.menu_name}}</text>
+          </block>
+          <block wx:else>
+            <text class="menu_content font-h3">{{item.menu_name}}</text>
+          </block>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class="page-section list-content" style="">
+
+      <view class="flex-wrp" style="flex-direction:column;">
+        <view wx:for="{{list}}" wx:key="p_uuid_pro_info" class="flex-item-row" style="flex-direction:row;" bindtap="tapItem" data-id="{{item.p_uuid_pro_info}}">
+          <view class="flex-item flex-item-image">
+            <image class="pro_cover_img_url" src="{{item.pro_cover_img_url}}" lazy-load="false"></image>
+          </view>
+          <view class="flex-item flex-item-content">
+            <view class='pro_title_short font-h3'>{{item.pro_title_short}}</view>
+            <view class='i-bottom flex-item-row'>
+              <view class='pro_price font-h4'>￥
+                <p class='font-h1'>{{item.pro_price}}</p>
+                <p class='font-h4'>.00</p>
+              </view>
+
+              <image class="button_buy" src="/image/global/step_next.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <block wx:if="{{totalPage > currentPage}}">
+        <view style="" class="flex-column">
+          <icon type="download" style="margin: 20rpx auto;flex: 1;" />
+        </view>
+      </block>
+
+
+    </view>
+
+
+  </view>
+
+  <!-- <template is="foot" /> -->
+</view>

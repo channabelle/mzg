@@ -1,0 +1,79 @@
+<view class="page-body">
+  <view class="page-section">
+    <view wx:if="{{summary}}" class="navigator-box" style="background-color: white;">
+      <view class="navigator">
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+          <view class="flex-row">
+            <view class="navigator-text-front" style="margin: auto 0rpx;">总计：￥{{summary.totalMoney_withDiscount}}</view>
+            <button class="font-h4" type="warn" size="mini" bindtap='submitOrder'>提交订单</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section-title">收货地址</view>
+    <view class="navigator-box">
+      <view class="navigator">
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;" bindtap='tapChooseAddress'>
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">收货人</view>
+            <view class="navigator-text-end " style="color: #888;">{{userAddress.contact_name}}</view>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">电话</view>
+            <view class="navigator-text-end " style="color: #888;">
+              <block wx:if="{{!userAddress.contact_phone}}">请选择</block>
+              <block wx:else>{{userAddress.contact_phone}}</block>
+            </view>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front navigator-text-front-address">地址</view>
+            <view class="navigator-text-end" style="color: #888;">{{userAddress.address_full}}</view>
+          </view>
+        </view>
+        <view class="navigator-arrow "></view>
+      </view>
+    </view>
+
+    <view wx:if="{{list}}" class="navigator-box">
+      <view wx:for="{{list}}" wx:key="index_uuid" class="navigator">
+        <image class="navigator-image" src="{{item.proInfo.pro_cover_img_url}}"></image>
+        <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+          <view class="navigator-text font-h2">
+            <block>{{item.proInfo.pro_title_short}}</block>
+          </view>
+          <view class="flex-row" style="margin-top: 15rpx;">
+            <view class="navigator-text-front font-h4" style="color: #888">价格：
+              <block>{{item.proInfo.pro_price}}</block>
+            </view>
+            <view wx:if="{{0 == item.proInfo.pro_total_quantity_unlimited}}" class="navigator-text-end font-h4" style="color: #888">剩余：
+              <block wx:if="{{0 == item.proInfo.pro_left_quantity}}">已无货</block>
+              <block wx:elif="{{100 > item.proInfo.pro_left_quantity}}">{{item.proInfo.pro_left_quantity}} (件)</block>
+            </view>
+          </view>
+          <view class="navigator-text-front font-h4" style="color: #888">实付：
+            <block>{{item.proInfo.pro_price_with_discount}}</block>
+          </view>
+          <view class="flex-row">
+            <view class="navigator-text-front font-h4" style="color: #888">数量： {{item.amount}} (件)</view>
+            <view class="navigator-text-end font-h4" style="color: #888">小计：￥
+              <block>{{item.amount_pro_price_with_discount}}</block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="page-section-title">备注</view>
+    <view wx:if="{{userOrder}} " class="navigator-box page-last-block">
+      <view class="navigator ">
+        <view class="flex-column " style="flex: 1;padding-right: 20rpx; ">
+          <view class="flex-row ">
+            <textarea class="navigator-text-front remark-textarea" maxlength="64" placeholder="最多输入64个字，可不填" bindinput='remarkInput'></textarea>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

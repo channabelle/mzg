@@ -1,0 +1,32 @@
+<!--pages/order/orderList/orderList.wxml-->
+<view class="page-body">
+  <view class="page-section">
+    <block wx:if="{{list.length == 0}}">
+      <image class="empty-icon" src="/image/global/empty_placehold.png" background-size="cover"></image>
+      <view style="text-align:center; color: #bfbfbf">暂无订单</view>
+    </block>
+
+    <block wx:else>
+      <view wx:if="{{list}}" class="navigator-box">
+        <navigator wx:for="{{list}}" wx:key="p_uuid_user_order" url="/pages/order/orderInfo/orderInfo?userOrderUuid={{item.p_uuid_user_order}}" class="navigator">
+          <image class="navigator-image" src="/image/order_status/{{item.order_pay_status_str}}.png"></image>
+          <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+            <text class="navigator-text font-h2" style="margin-bottom: 10rpx;">{{item.order_name}}</text>
+            <view class="flex-row">
+              <view class="navigator-text-front font-h4" style="color: #888">共{{item.order_total_num}}件 ￥{{item.order_amount}}</view>
+              <view class="navigator-text-end font-h4" style="color: #888">{{item.cTime_time_str}}</view>
+            </view>
+          </view>
+          <view class="navigator-arrow"></view>
+        </navigator>
+
+        <block wx:if="{{totalPage > currentPage}}">
+          <view style="" class="flex-column">
+            <icon type="download" style="margin: 20rpx auto;flex: 1;" />
+          </view>
+        </block>
+      </view>
+
+    </block>
+  </view>
+</view>

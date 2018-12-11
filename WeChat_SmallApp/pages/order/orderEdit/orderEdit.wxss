@@ -1,0 +1,90 @@
+.navigator-box {
+  position: relative;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 34rpx;
+  padding-bottom: 5rpx;
+  margin-top: 20rpx;
+}
+
+.navigator {
+  padding: 20rpx 30rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navigator:before {
+  content: " ";
+  position: absolute;
+  left: 30rpx;
+  top: 0;
+  right: 30rpx;
+  height: 1px;
+  border-top: 1rpx solid #d8d8d8;
+  color: #d8d8d8;
+}
+
+.navigator:first-child:before {
+  display: none;
+}
+
+.navigator-arrow {
+  padding-left: 6rpx;
+  padding-right: 26rpx;
+  position: relative;
+}
+
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}
+
+.navigator-text-front {
+  flex: 1;
+}
+
+.navigator-text-end {
+  flex: 1;
+  text-align: right;
+}
+
+.navigator-text-front-address {
+  color: #888;
+  text-align: left;
+  max-width: 135rpx;
+}
+
+.flex-row {
+  font-size: 28rpx;
+}
+
+.navigator-image {
+  width: 185rpx;
+  height: 185rpx;
+  margin-right: 20rpx;
+}
+
+.page-section-title {
+  margin-top: 50rpx;
+}
+
+.page-last-block {
+  margin-bottom: 30rpx;
+}
+
+.remark-textarea {
+  color: #888;
+  min-height: 120rpx;
+  height: 0rpx;
+}

@@ -1,0 +1,64 @@
+.page-section {
+  font-size: 0rpx; /* 为了消除inline-block的间距 */
+}
+
+.pro_detail_img_url {
+  width: 100%;
+  display: block;
+}
+
+.page-content {
+  margin-bottom: 100rpx;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0rpx;
+  flex-direction: row;
+  display: flex;
+  background-color: #fdfaff;
+  /* border-top: gray solid 2rpx; */
+  height: 100rpx;
+}
+
+.page-footer-item {
+  height: 100%;
+}
+
+.page-footer-item-totalNum {
+  height: 30rpx;
+  width: 30rpx;
+  line-height: 30rpx;
+  border-radius: 15rpx;
+  border: 2rpx solid #e64340;
+  background-color: #e64340;
+  position: absolute;
+  text-align: center;
+  color: white;
+  left: 180rpx;
+  top: 13rpx;
+}
+
+.page-footer-item-userLike {
+  height: 40rpx;
+  width: 40rpx;
+  margin: 30rpx 40rpx;
+}
+
+.page-footer-item-shopCar {
+  height: 40rpx;
+  width: 40rpx;
+  margin: 30rpx 40rpx;
+}
+
+/*
+750 - 2 * 120
+*/
+
+.page-footer-item-buy {
+  /* width: 510rpx; */
+  margin: 0rpx;
+  text-align: center;
+  border-radius: 0rpx;
+  line-height: 100rpx;
+}

@@ -1,0 +1,36 @@
+<!--pages/my/address/address.wxml-->
+<view class="page-body">
+  <view class="page-section">
+    <view wx:if="{{list}}" class="navigator-box">
+
+      <block wx:if="{{1 == choose}}">
+        <radio-group bindchange="chooseAddress">
+          <view wx:for="{{list}}" wx:key="p_uuid_user_address" class="flex-row">
+            <radio value="{{index}}" class="address-checkbox" color="red" checked=""></radio>
+            <navigator url="/pages/my/address/edit?id={{item.p_uuid_user_address}}" class="navigator" style="flex: 1;">
+              <image class="navigator-image" src="/image/global/address_type/{{item.address_type}}.png"></image>
+              <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+                <view class="navigator-text font-h2">{{item.address_full}}</view>
+                <view class="navigator-text font-h4" style="color: #888">{{item.contact_name}} {{item.contact_phone}}</view>
+              </view>
+              <view class="navigator-arrow"></view>
+            </navigator>
+          </view>
+        </radio-group>
+      </block>
+      <block wx:elif="{{0 == choose}}">
+        <navigator wx:for="{{list}}" wx:key="p_uuid_user_address" url="/pages/my/address/edit?id={{item.p_uuid_user_address}}" class="navigator" style="flex: 1;">
+          <image class="navigator-image" src="/image/global/address_type/{{item.address_type}}.png"></image>
+          <view class="flex-column" style="flex: 1;padding-right: 20rpx;">
+            <view class="navigator-text font-h2">{{item.address_full}}</view>
+            <view class="navigator-text font-h4" style="color: #888">{{item.contact_name}} {{item.contact_phone}}</view>
+          </view>
+          <view class="navigator-arrow"></view>
+        </navigator>
+      </block>
+
+      <button type="warn" style="margin: 15rpx 25rpx;" bindtap="tapAddAddress">新增收货地址
+      </button>
+    </view>
+  </view>
+</view>

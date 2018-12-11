@@ -1,0 +1,55 @@
+<!--pages/my/address/edit.wxml-->
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit">
+      <view class="page-section" style="margin-top: 60rpx;">
+        <view class="page-section-title">收货联系人</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="formInputLabel">收货人</view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="contact_name" placeholder="请输入姓名" value="{{address.contact_name}}"/>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input" style>
+            <view class="formInputLabel">联系电话</view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="contact_phone" maxlength="11" type="number" placeholder="请输入11位手机号码" value="{{address.contact_phone}}" />
+            </view>
+          </view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                <view class="formInputLabel">地址类型</view>
+              </view>
+              <view class="weui-cell__bd">
+                <picker bindchange="bindPickerChange" name="address_type" value="{{address_type[index]}}" range="{{address_type}}">
+                  <view class="weui-input">{{address_type[index]}}</view>
+                </picker>
+              </view>
+              <view class="navigator-arrow"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="page-section">
+        <view class="page-section-title">收货地址</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__bd">
+                <textarea name="address" class="weui-input" auto-height="true" style="min-height: 200rpx;" value="{{address.address_full}}"/> 
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="btn-area">
+        <button type="warn" formType="submit">保存</button>
+        <button wx:if="{{address_uuid}}" type="primary" bindtap="tapDelete">删除</button>
+      </view>
+    </form>
+  </view>
+</view>

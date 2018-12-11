@@ -1,0 +1,213 @@
+.empty-icon {
+  height: 150rpx;
+  width: 150rpx;
+  margin: 40rpx 300rpx;
+}
+
+movable-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280rpx;
+  width: 750rpx;
+  margin-left: 300rpx;
+  background: #1aad19;
+  color: #fff;
+}
+
+movable-area {
+  height: 280rpx;
+  width: 1050rpx;
+  margin-left: -300rpx;
+  overflow: hidden;
+}
+
+.flex-item-row {
+  margin-top: 2rpx;
+  display: flex;
+}
+
+.flex-item {
+  height: 280rpx;
+  margin: 0 0rpx;
+  font-size: 26rpx;
+}
+
+.flex-item-function-block {
+  height: 100%;
+  width: 300rpx;
+  right: 0rpx;
+  position: absolute;
+}
+
+.flex-item-moveToLike {
+  height: 100%;
+  width: 50%;
+  margin: 0rpx;
+  text-align: center;
+  -webkit-line-clamp: 2;
+  line-height: 280rpx;
+  border-radius: 0rpx;
+  display: inline-block;
+  padding: 0rpx 5rpx;
+}
+
+button[type=info] {
+  background-color: #e6e6e6;
+  color: black;
+  outline: none;
+}
+
+.flex-item-delete {
+  height: 100%;
+  width: 50%;
+  margin: 0rpx;
+  text-align: center;
+  line-height: 280rpx;
+  border-radius: 0rpx;
+  display: inline-block;
+}
+
+.flex-item-checkbox {
+  background-color: white;
+}
+
+.item-checkbox {
+  margin: 129rpx 20rpx;
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.item-checkbox-all {
+  margin: 23rpx 20rpx;
+  width: 42rpx;
+  height: 42rpx;
+}
+
+/* iPhone 6 总共750rpx */
+
+.flex-item-image {
+  background-color: white;
+  width: 280rpx;
+}
+
+.flex-item-content {
+  background-color: white;
+  width: 450rpx;
+  position: relative;
+}
+
+.pro_title_short {
+  margin: 25rpx 10rpx;
+  min-height: 135rpx;
+  color: black;
+  padding: 20rpx 15rpx;
+}
+
+.i-bottom {
+  position: absolute;
+  bottom: 25rpx;
+  width: 100%;
+}
+
+.pro_price {
+  color: red;
+  margin-left: 10rpx;
+}
+
+.button_add {
+  right: 0rpx;
+  bottom: 0rpx;
+  margin: 0rpx 0rpx;
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  padding-left: 40rpx;
+  padding-right: 25rpx;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+}
+
+.pro_num {
+  min-width: 65rpx;
+  right: 60rpx;
+  line-height: 35rpx;
+  text-align: center;
+  bottom: 5rpx;
+  margin: 0rpx 10rpx;
+  position: absolute;
+  color: black;
+  background-color: #e6e6e6;
+}
+
+.button_delete {
+  right: 105rpx;
+  bottom: 0rpx;
+  margin: 0rpx 0rpx;
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  padding-right: 40rpx;
+  padding-left: 25rpx;
+}
+
+/*
+  total: 280rpx
+*/
+
+.pro_cover_img_url {
+  width: 240rpx;
+  height: 240rpx;
+  margin-top: 20rpx;
+}
+
+.page-content {
+  margin-bottom: 100rpx;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0rpx;
+  flex-direction: row;
+  display: flex;
+  background-color: #fdfaff;
+  /* border-top: gray solid 2rpx; */
+  height: 100rpx;
+}
+
+.page-footer-item {
+  height: 100%;
+}
+
+.page-footer-item-choose-all {
+  width: 150rpx;
+}
+
+.page-footer-item-addInfo {
+  width: 190rpx;
+  color: #e64340;
+  line-height: 100rpx;
+  height: 100%;
+  text-align: center;
+  /* padding: 0rpx 25rpx; */
+}
+
+.page-footer-item-totalMoney {
+  width: 190rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+/*
+750 - 2 * 120
+*/
+
+.page-footer-item-pay {
+  width: 220rpx;
+  margin: 0rpx;
+  text-align: center;
+  border-radius: 0rpx;
+  line-height: 100rpx;
+}

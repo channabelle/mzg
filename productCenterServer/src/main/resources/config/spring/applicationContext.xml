@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 加载数据库连接信息db.properties -->
+	<context:property-placeholder
+		location="classpath:/config/db/db.properties" />
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource_productCenter"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.productCenter.driverClassName}" />
+		<property name="url" value="${jdbc.productCenter.url}" />
+		<property name="username"
+			value="${jdbc.productCenter.username}" />
+		<property name="password"
+			value="${jdbc.productCenter.password}" />
+	</bean>
+
+	<bean id="dataSource_houseAgent"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.houseAgent.driverClassName}" />
+		<property name="url" value="${jdbc.houseAgent.url}" />
+		<property name="username" value="${jdbc.houseAgent.username}" />
+		<property name="password" value="${jdbc.houseAgent.password}" />
+	</bean>
+</beans>

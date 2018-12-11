@@ -1,0 +1,152 @@
+<!-- BEGIN EXTRAS PORTLET-->
+<div class="portlet-body form">
+    <form action="#" id="form_sample_3" class="form-horizontal">
+        <div class="form-body">
+            <div class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+            <div class="alert alert-success display-hide">
+                <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+
+            <!-- 编号和状态 START -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-4 control-label" for="form_control_1">产品编号
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-md-8">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control input-cpbh" name="text" placeholder="创建后不可更改" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-md-line-input">
+                        <label class="control-label col-md-4">状态</label>
+                        <div class="col-md-8">
+                            <select class="bs-select form-control select-zt" data-live-search="true" data-size="8">
+                                <option value="0">可售</option>
+                                <option value="1">已下架</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 编号和状态 END -->
+            <!-- 价格和数量 START -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-4 control-label" for="form_control_1">价格
+                            <span class="required">*</span>
+                        </label>
+                        <div class="col-md-8">
+                            <div class="input-icon right">
+                                <i class="iconfont icon-renminbi1688"></i>
+                                <input type="text" class="form-control input-jg" name="number" placeholder="请输入价格（元）" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-md-line-input">
+                        <label class="col-md-4 control-label" for="form_control_1">产品总量</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="border-bottom: 0px;padding: 6px 0px;">
+                                    <label>
+                                        <input type="checkbox" checked class="icheck checkbox-cpzl-bx" data-checkbox="icheckbox_line-grey" data-label="不限">
+                                    </label>
+                                </span>
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control input-cpzl" placeholder="可售总量（默认不限）" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 价格和数量 END -->
+            <div class="form-group form-md-line-input">
+                <label class="col-md-2 control-label" for="form_control_1">（简称）名称
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-cube"></i>
+                        </span>
+                        <input type="text" class="form-control input-cpmc-short" name="name" placeholder="请输入产品名称（必填）" />
+
+                        <div class="form-control-focus"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-md-line-input">
+                <label for="inputEmail3" class="col-md-2 control-label">分类
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-10">
+                    <div class="input-group">
+                        <select class="form-control select-fl" multiple>
+                        </select>
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-add-fl" type="button">
+                                <span class="">新增分类</span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-md-line-input">
+                <label class="control-label col-md-2">（链接）封面
+                    <span class="required">*</span>
+                </label>
+                <div class="col-md-10">
+                    <div class="input-group">
+                        <select class="form-control  select-fm" data-live-search="true" data-size="8">
+                        </select>
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning" type="button">
+                                <span class="">上传图片</span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- 有效期 START -->
+            <div class="form-group form-md-line-input">
+                <label class="control-label col-md-2">有效期</label>
+                <div class="col-md-10">
+                    <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd">
+                        <span class="input-group-addon" style="border-bottom: 0px;padding: 6px 0px;">
+                            <label>
+                                <input type="checkbox" checked class="icheck checkbox-yxq-start-bx" data-checkbox="icheckbox_line-grey" data-label="不限">
+                            </label>
+                        </span>
+                        <input type="text" class="form-control input-yxq-start" name="from" placeholder="开始日期（默认无限）">
+                        <span class="input-group-addon" style="border-bottom: 0px;"> 至 </span>
+                        <span class="input-group-addon" style="border-bottom: 0px;padding: 6px 0px;">
+                            <label>
+                                <input type="checkbox" checked class="icheck checkbox-yxq-end-bx" data-checkbox="icheckbox_line-grey" data-label="不限">
+                            </label>
+                        </span>
+                        <input type="text" class="form-control input-yxq-end" name="to" placeholder="结束日期（默认无限）"> </div>
+                </div>
+            </div>
+            <!-- 有效期 END -->
+        </div>
+        <div class="form-actions form-actions-area" style="display: none; position: fixed; bottom:0px; width:100%; right:0px; text-align: center;">
+            <div class="btn-set">
+                <button id="save-info" type="submit" class="btn btn-primary ladda-button btn-lg" data-style="expand-right">
+                    <span class="ladda-label">
+                        <i class="fa fa-save"></i> 保存信息</span>
+                </button>
+                <button type="button" class="btn btn-default btn-lg">
+                    <i class="fa fa-remove"></i> 取消</button>
+            </div>
+        </div>
+    </form>
+</div>

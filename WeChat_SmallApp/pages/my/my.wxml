@@ -1,0 +1,40 @@
+<view class="page-body">
+  <view class="page-section page-section-avator">
+    <view class="userinfo">
+      <block wx:if="{{!hasUserInfo && canIUse}}">
+        <image class="userinfo-avatar" src="/image/global/default_avator.png" background-size="cover"></image>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" size="mini" class="mini-btn userinfo-button" type="default"> 求真相 </button>
+        <view class="user-info-blank" />
+      </block>
+
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view class="userinfo-nickname-block">
+          <view class="userinfo-nickname">你好，</view>
+          <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <!-- <view class="page-section-title"></view> -->
+    <view class="navigator-box">
+      <navigator url="/pages/shoppingCar/shoppingCar" class="navigator">
+        <image class="navigator-image" src="/image/global/my_shopping_car.png"></image>
+        <view class="navigator-text">我的购物车</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <navigator url="/pages/order/orderList/orderList" class="navigator">
+        <image class="navigator-image" src="/image/global/order_list.png"></image>
+        <view class="navigator-text">我的订单</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+      <navigator url="/pages/my/address/address?choose=0" class="navigator">
+        <image class="navigator-image" src="/image/global/my_address.png"></image>
+        <view class="navigator-text">收货地址</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+    </view>
+  </view>
+</view>

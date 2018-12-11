@@ -1,0 +1,74 @@
+<!-- <import src="../../../common/head.wxml" /> -->
+<!-- <import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <!-- <template is="head" data="{{title: 'view'}}"/> -->
+
+  <view class="page-body">
+    <view class="page-section page-content">
+      <view class="flex-wrp" style="flex-direction:column;">
+        <block wx:if="{{list.length == 0}}">
+          <image class="empty-icon" src="/image/global/empty_placehold.png" background-size="cover"></image>
+          <view style="text-align:center; color: #bfbfbf">您还没添加任何商品哦</view>
+        </block>
+
+        <view wx:for="{{list}}" wx:key="p_uuid_shopping_car" class="flex-item-row" style="flex-direction:row;">
+          <movable-area class='item-movable-area'>
+            <view class="flex-item-function-block">
+              <button type="info" class="flex-item-moveToLike font-h4">移入关注</button>
+              <button type="warn" class="flex-item-delete font-h4" bindtap="tapDeleteAll" data-id="{{item.uuid_pro_info}}">删除</button>
+            </view>
+
+            <movable-view x="{{item.moveX}}" inertia direction="horizontal" damping="30" friction="0.5" out-of-bounds bindchange="itemMoveChange" bindtouchstart="itemTouchStart" data-index="{{index}}">
+              <view class="flex-item flex-item-checkbox">
+                <checkbox-group bindchange="itemCheckboxChange" data-id="{{item.proInfo.p_uuid_pro_info}}" data-num="{{item.amount}}">
+                  <checkbox value="radio-{{item.proInfo.p_uuid_pro_info}}" class="item-checkbox" checked="{{item.checked}}"></checkbox>
+                </checkbox-group>
+              </view>
+
+              <view class="flex-item flex-item-image" bindtap="tapItem" data-id="{{item.proInfo.p_uuid_pro_info}}">
+                <image class="pro_cover_img_url" src="{{item.proInfo.pro_cover_img_url}}"></image>
+              </view>
+              <view class="flex-item flex-item-content">
+                <view class='pro_title_short font-h3' bindtap="tapItem" data-id="{{item.proInfo.p_uuid_pro_info}}">{{item.proInfo.pro_title_short}}</view>
+                <view class='i-bottom flex-item-row'>
+                  <view class='pro_price font-h5'>￥
+                    <p class='font-h2'>{{item.proInfo.pro_price}}</p>
+                    <p class='font-h5'>.00</p>
+                  </view>
+
+                  <view class='font-h4 pro_num'>{{item.amount}}</view>
+                  <image class="button_add" src="/image/global/add.png" bindtap="tapAdd" data-id="{{item.uuid_pro_info}}" data-num="{{item.amount}}"></image>
+                  <image class="button_delete" src="/image/global/minus.png" bindtap="tapDelete" data-id="{{item.uuid_pro_info}}" data-num="{{item.amount}}"></image>
+                </view>
+              </view>
+            </movable-view>
+          </movable-area>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section page-footer" wx:if="{{list.length > 0}}">
+      <view class="page-footer-item page-footer-item-choose-all">
+        <checkbox-group bindchange="itemCheckboxAllChange">
+          <checkbox id="checkbox-chooseAll" class="item-checkbox-all" value="" checked="{{allChecked}}"></checkbox>
+
+          <label class="font-h3" for="checkbox-chooseAll">全选</label>
+        </checkbox-group>
+      </view>
+      <view class="page-footer-item page-footer-item-addInfo">
+        <view class="font-h3"></view>
+      </view>
+      <view class="page-footer-item page-footer-item-totalMoney font-h5">合计：￥{{summary.totalMoney}}</view>
+      <view class="page-footer-item" bindtap="toOrder">
+        <button type="warn" class="page-footer-item-pay font-h3">去结算
+          <text class="font-h4">({{summary.totalNum}})</text>
+        </button>
+      </view>
+
+
+    </view>
+  </view>
+
+  <!-- <template is="foot" /> -->
+</view>

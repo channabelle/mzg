@@ -1,0 +1,29 @@
+<!-- <import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <!-- <template is="head" data="{{title: 'view'}}"/> -->
+
+  <view class="page-body">
+    <view class="page-section page-content">
+      <image wx:for="{{pro_detail_imgs}}" wx:key="*this" class="pro_detail_img_url" src="{{item}}" mode='widthFix'></image>
+
+    </view>
+
+    <view class="page-section page-footer flex-column">
+      <view class="page-footer-item">
+        <image class="page-footer-item-userLike" src="/image/global/like_black.png"></image>
+      </view>
+      <view class="page-footer-item" style="border-left: 2rpx solid #bfbfbf" bindtap="tapToShoppingCar">
+        <image class="page-footer-item-shopCar" src="/image/global/shopping_car_black.png"></image>
+      </view>
+      <view class="page-footer-item page-footer-item-totalNum font-h5">{{shopCar_totalNum}}</view>
+      <view class="page-footer-item" style="flex: 1;" bindtap="putToShoppingCar" data-uuid="{{pro.p_uuid_pro_info}}">
+        <button type="warn" class="page-footer-item-buy">加入购买车</button>
+      </view>
+
+
+    </view>
+  </view>
+  <!-- <template is="foot" /> -->
+</view>

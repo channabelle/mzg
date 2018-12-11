@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<link rel="import" href="../module-package/global-auth.html?__inline" />
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <title>野出去-测试-表单模板</title>
+        <meta charset="utf-8" />
+        <link rel="import" href="../module-package/global-meta.html?__inline" />
+        <link rel="import" href="../module-package/global-css.html?__inline" />
+
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link rel="import" href="../module-package/page-form-themes.html?__inline" />
+
+        <!-- END PAGE LEVEL PLUGINS -->
+
+        <link rel="import" href="../module-package/global-theme.html?__inline" />
+        <link rel="shortcut icon" href="favicon.ico" />
+    </head>
+    <!-- END HEAD -->
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-boxed">
+        <link rel="import" href="../module-package/page-header.html?__inline" />
+
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"></div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+
+        <!-- BEGIN CONTAINER -->
+        <div class="container">
+            <div class="page-container">
+                <link rel="import" href="../module-package/page-sidebar-menu.html?__inline" />
+
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <div class="page-content">
+                        <!-- BEGIN PAGE HEADER-->
+                        <!-- BEGIN THEME PANEL -->
+                        <!-- END THEME PANEL -->
+                        <!-- BEGIN PAGE BAR -->
+
+                        <!-- END PAGE BAR -->
+                        <!-- BEGIN PAGE TITLE-->
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <!-- BEGIN PAGE CONTENT-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet box green">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-gift"></i>FORM模板 </div>
+                                    </div>
+                                    <div class="portlet-body form">
+
+                                        <!-- BEGIN FORM-->
+                                        <form action="#" id="form_sample_3" class="form-horizontal">
+                                            <div class="form-body">
+                                                <div class="alert alert-danger display-hide">
+                                                    <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                                <div class="alert alert-success display-hide">
+                                                    <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label class="col-md-2 control-label" for="form_control_1">邮箱
+                                                        <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-envelope font-purple"></i>
+                                                            </span>
+                                                            <input type="text" class="form-control" name="email2" placeholder="Enter your email" />
+                                                            <div class="form-control-focus"> </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+                                                    <div class="col-md-10">
+                                                        <select id="select2-button-addons-single-input-group-sm" class="form-control js-data-example-ajax" multiple>
+                                                            <option value="2126244" selected="selected">twbs/bootstrap</option>
+                                                            <option value="3620194" selected="selected">select2/select2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-md-line-input">
+                                                            <label class="col-md-4 control-label" for="form_control_1">价格
+                                                                <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa fa-rmb tooltips"></i>
+                                                                    <input type="text" class="form-control" name="number" placeholder="请输入价格" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-md-line-input">
+                                                            <label class="col-md-4 control-label" for="form_control_1">名称</label>
+                                                            <div class="col-md-8">
+                                                                <input type="text" class="form-control" />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">有效期</label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group date form_meridian_datetime" data-date="2012-12-21T15:25:00Z">
+                                                            <input type="text" size="16" class="form-control">
+                                                            <span class="input-group-btn">
+                                                             
+                                                                <button class="btn default date-set" type="button">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">状态</label>
+                                                    <div class="col-md-10">
+                                                        <select class="bs-select form-control" data-live-search="true" data-size="8">
+                                                            <option value="AF">上架</option>
+                                                            <option value="AL">下架</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">Multiple</label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group">
+                                                            <select class="bs-select form-control" data-live-search="true" data-size="8" multiple>
+                                                                <option>Mustard</option>
+                                                                <option>Ketchup</option>
+                                                                <option>Relish</option>
+                                                            </select>
+                                                            <span class="input-group-btn">
+                                                                <button class="btn btn-default" type="button" data-select2-open="multi-append">
+                                                                    <span class="glyphicon glyphicon-search">新增</span>
+                                                            </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">Date Range</label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+                                                            <input type="text" class="form-control" name="from">
+                                                            <span class="input-group-addon"> to </span>
+                                                            <input type="text" class="form-control" name="to"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-2">Advance Datetimepicker</label>
+                                                    <div class="col-md-10">
+                                                        <div class="input-group date form_datetime" data-date="2012-12-21T15:25:00Z">
+                                                            <input type="text" size="16" readonly class="form-control">
+                                                            <span class="input-group-btn">
+                                                            <button class="btn default date-reset" type="button">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>
+                                                            <button class="btn default date-set" type="button">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </button>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <div class="btn-set pull-right">
+                                                    <button type="submit" class="btn green"><i class="fa fa-check"></i>保存</button>
+                                                    <button type="button" class="btn blue">取消</button>
+                                                    <button type="button" class="btn btn-primary mt-ladda-btn ladda-button" data-style="expand-right">
+                                                    <span class="ladda-label">
+                                                        <i class="icon-arrow-right"></i> Expand Right</span>
+                                                </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <!-- END FORM-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PAGE CONTENT-->
+                    </div>
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+                <!-- END QUICK SIDEBAR -->
+            </div>
+        </div>
+        <!-- END CONTAINER -->
+        <link rel="import" href="../module-package/page-footer.html?__inline" />
+        <link rel="import" href="../module-package/global-core-js.html?__inline" />
+
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link rel="import" href="../module-package/page-form-plugins.html?__inline" />
+        <!-- END PAGE LEVEL PLUGINS -->
+
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <link rel="import" href="../module-package/global-theme-js.html?__inline" />
+        <!-- END THEME GLOBAL SCRIPTS -->
+
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <link rel="import" href="../module-package/page-form-scripts.html?__inline" />
+        <!-- END PAGE LEVEL SCRIPTS -->
+
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <link rel="import" href="../module-package/global-theme-layout-js.html?__inline" />
+        <!-- END THEME LAYOUT SCRIPTS -->
+
+        <link rel="import" href="../module-package/global-my-js.html?__inline" />
+
+    </body>
+
+</html>

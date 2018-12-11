@@ -1,0 +1,103 @@
+.scroll-view_H {
+  width: 100%;
+  white-space: nowrap;
+  padding: 0rpx 0rpx;
+  background-color: white;
+  position: fixed;
+  border-bottom: 1rpx solid #e6e0e0;
+  z-index: 10;
+}
+
+/* 去除滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.menu_content {
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_selected {
+  margin: 0rpx 10rpx;
+  padding: 0rpx 20rpx;
+  border-bottom: 5rpx solid red;
+  color: red;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  min-width: 187.5rpx;
+  text-align: center;
+}
+
+.list-content {
+  margin-top: 68rpx;
+  z-index: 9;
+}
+
+.flex-item-row {
+  margin-top: 2rpx;
+  display: flex;
+}
+
+.flex-item {
+  height: 300rpx;
+  margin: 0 0rpx;
+  font-size: 26rpx;
+}
+
+/* iPhone 6 总共750rpx */
+
+.flex-item-image {
+  background-color: white;
+  width: 300rpx;
+}
+
+.flex-item-content {
+  background-color: white;
+  width: 450rpx;
+  position: relative;
+}
+
+.pro_title_short {
+  margin: 20rpx 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.i-bottom {
+  position: absolute;
+  bottom: 25rpx;
+  width: 100%;
+}
+
+.pro_price {
+  color: red;
+  margin-left: 10rpx;
+}
+
+.button_buy {
+  right: 45rpx;
+  margin: -25rpx 0rpx;
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/*
+  300rpx
+*/
+
+.pro_cover_img_url {
+  margin: 1rpx;
+  width: 298rpx;
+  height: 298rpx;
+}
