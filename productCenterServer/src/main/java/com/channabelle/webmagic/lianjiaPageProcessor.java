@@ -45,14 +45,15 @@ public class lianjiaPageProcessor extends CommonPageProcessor {
 		String cUrl = page.getUrl().toString();
 		printLog(String.format("page: %d, url: %s", cPage, cUrl));
 
-		List<Selectable> listItem = page.getHtml().css(".info-panel").nodes();
+		List<Selectable> listItem = page.getHtml().css(".content__list--item").nodes();
 		if (null != listItem && 0 < listItem.size()) {
 			for (int k = 0; k < listItem.size(); k++) {
 				Selectable item = listItem.get(k);
 
-				String title = item.css("h2 a").regex(">(.*)</a>").toString();
-				String price = item.css(".price .num").regex(">(\\d+)</span>").toString();
-				String itemDetailUrl = item.css("h2 a").regex("href=\"(\\S+html)\"").toString();
+				String title = item.css(".content__list--item--title a").regex(">(.*)</a>").toString();
+				String price = item.css(".content__list--item-price em").regex(">(\\d+)</em>").toString();
+				String itemDetailUrl = item.css(".content__list--item--title a").regex("href=\"(\\S+html)\"")
+						.toString();
 
 				printLog(String.format("{\"index\": \"%d\", \"price\": \"%s\", \"title\": \"%s\", \"url\": \"%s\"}", k,
 						price, title, itemDetailUrl));
@@ -90,47 +91,47 @@ public class lianjiaPageProcessor extends CommonPageProcessor {
 		}
 		h.setCrumbs(crumbs);
 
-		String houseTitle = page.getHtml().css(".title .main").regex(">(.*)<").toString();
+		String houseTitle = page.getHtml().css(".content__title").regex(">(.*)<").toString();
 		h.setHouseTitle(houseTitle);
 
-		String houseSubTitle = page.getHtml().css(".title .sub").regex(">(.*)<").toString();
-		h.setHouseSubTitle(houseSubTitle);
+		h.setHouseSubTitle(null);
 
-		String price = page.getHtml().css(".price .total").regex(">(.*)</span>").toString();
+		String price = page.getHtml().css(".content__aside--title span").regex(">(.*)</span>").toString();
 		if (false == StringUtil.isBlank(price)) {
 			h.setPrice(Double.parseDouble(price.toString()));
 		} else {
 			h.setPrice(-1);
 		}
 
-		String priceUnit = page.getHtml().css(".price .unit").regex("<span>([^span]+)</span>").toString();
+		String priceUnit = page.getHtml().css(".content__aside--title").regex("</span>([^span]+)</p>").toString();
 		h.setPriceUnit(priceUnit);
 
 		h.setHouseRentType(null);
 		h.setHouseFloor(null);
 
-		String houseArea = page.getHtml().css(".zf-room").regex("面积：</i>(.*)平米</p>").toString();
-		h.setHouseArea(Double.parseDouble(houseArea.toString()));
+		String houseArea = page.getHtml().css(".content__article__table").regex("<i class=\"area\"></i>(\\d+).*</span>")
+				.toString();
+		if (false == StringUtil.isBlank(houseArea)) {
+			h.setHouseArea(Double.parseDouble(houseArea.toString()));
+		} else {
+			h.setHouseArea(-1);
+		}
 
 		h.setHouseAreaUnit("平米");
 
-		String houseOrientation = page.getHtml().css(".zf-room").regex("房屋朝向：</i>([^/p]+)</p>").toString();
+		String houseOrientation = page.getHtml().css(".content__article__table")
+				.regex("<i class=\"orient\"></i>(.*)</span>").toString();
 		h.setHouseOrientation(houseOrientation);
 
 		h.setHouseDecoration(null);
 		h.setHousePaymentType(null);
+		h.setHouseAddress(null);
 
-		String houseAddress = page.getHtml().css(".zf-room").regex("位置：</i>.*>([^>]+)</a>").toString();
-		h.setHouseAddress(houseAddress);
-
-		String houseNo = page.getHtml().css(".houseRecord .houseNum").regex("链家编号\\：(\\d+)</span>").toString();
+		String houseNo = page.getHtml().css(".house_code").regex("房源编号\\：(\\w+)</i>").toString();
 		h.setHouseNo(houseNo);
 
 		h.setHouseDecorationFinishTime(null);
-
-		String houseAgentName = page.getHtml().css(".brokerName .name").regex(">(.*)</a>").toString();
-		h.setHouseAgentName(houseAgentName);
-
+		h.setHouseAgentName(null);
 		h.setHouseAgentShop(null);
 		h.setHouseAgentPhone(null);
 
